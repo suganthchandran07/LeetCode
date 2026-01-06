@@ -15,13 +15,8 @@ class Solution {
             if (!(aCount != 0 && bCount != 0) 
                     && !(bCount != 0 && cCount != 0) 
                     && !(cCount != 0 && aCount != 0))
-                res.add(word); 
+                res.add(word);
         }
-        String[] ans = new String[res.size()];
-        int index = 0;
-        for (String word : res) {
-            ans[index++] = word;
-        }
-        return ans;
+        return res.toArray(new String[0]);
     }
 }
