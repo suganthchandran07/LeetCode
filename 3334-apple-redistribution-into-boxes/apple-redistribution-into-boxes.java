@@ -5,11 +5,11 @@ class Solution {
             appleCount += a;
         }
         Arrays.sort(capacity);
-        int sum = 0, count = 0, len = capacity.length;
+        int count = 0, len = capacity.length;
         for (int i = len - 1; i >= 0; i--) {
-            sum += capacity[i];
+            appleCount -= capacity[i];
             count++;
-            if (appleCount <= sum) return count;
+            if (appleCount <= 0) return count;
         }
         return 0;
     }
