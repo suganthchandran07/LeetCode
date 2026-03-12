@@ -1,22 +1,16 @@
 class Solution {
     public int oddCells(int m, int n, int[][] indices) {
-        int[][] res = new int[m][n];
-        for (int i = 0; i < indices.length; i++) {
-            int r = indices[i][0];
-            int c = indices[i][1];
-            for (int j = 0; j < n; j++) {
-                res[r][j]++;
-            }
-            for (int k = 0; k < m; k++) {
-                res[k][c]++;
-            }
+        int[] row = new int[m];
+        int[] col = new int[n];
+        for(int[] num : indices) {
+            row[num[0]]++;
+            col[num[1]]++;
         }
-        int count = 0;
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
-                if (res[i][j]%2 != 0) count++;
-            }
-        }
-        return count;
+        int oddRow = 0, oddCol = 0;
+        for(int num : row)
+            if (num % 2 != 0) oddRow++;
+        for(int num : col)
+            if (num % 2 != 0) oddCol++;
+        return oddRow * (n - oddCol) + oddCol * (m - oddRow);
     }
 }
