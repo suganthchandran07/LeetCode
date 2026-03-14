@@ -7,6 +7,6 @@ class Solution {
                 return new int[]{map.get(a),i};
             map.put(nums[i], i);
         }
-        return new int[]{};
+        return new int[]{-1, -1};
     }
 }
