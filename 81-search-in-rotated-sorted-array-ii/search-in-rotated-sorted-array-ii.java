@@ -23,8 +23,7 @@ class Solution {
                 left++;
                 if (nums[right] < nums[right - 1]) return right - 1;
                 right--;
-            // } else if (nums[mid] > nums[left] || (nums[mid] == nums[left] && nums[mid] > nums[right]))
-                        } else if (nums[mid] >= nums[left])
+            } else if (nums[mid] > nums[left] || (nums[mid] == nums[left] && nums[mid] > nums[right]))
                 left = mid + 1;
             else
                 right = mid - 1;
